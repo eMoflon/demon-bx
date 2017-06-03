@@ -1,0 +1,26 @@
+#using KitchenToGridLanguage.*
+#using AttrCondDefLibrary.*
+
+#rule KitchenToGridRule #with KitchenToGridLanguage
+
+#source { 
+	++grid : Grid
+	
+}
+
+#target {
+	++kitchen : Kitchen
+}
+
+#correspondence {
+	++kitchenToGrid : KitchenToGridCorr{
+		#src-> grid
+		#trg-> kitchen
+	}
+}
+
+#attributeConditions {
+	setDefaultNumber(grid.blockSize, 100)
+	setDefaultNumber(kitchen.xSize, 500)
+	setDefaultNumber(kitchen.ySize, 500)
+}

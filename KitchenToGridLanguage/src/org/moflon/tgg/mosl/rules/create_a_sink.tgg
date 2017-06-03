@@ -1,0 +1,20 @@
+#using KitchenToGridLanguage.*
+#using AttrCondDefLibrary.*
+
+#rule create_a_sink #extends CreateHorizontalItem #with KitchenToGridLanguage
+
+#source {
+	firstBlock : Block {
+		 -w->noBlock
+	}
+	
+	!noBlock:Block
+}
+
+#target {	
+	++item:Sink
+}
+
+#attributeConditions {	
+	eq(firstBlock.xIndex, 0)
+}

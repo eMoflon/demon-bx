@@ -1,0 +1,21 @@
+#using KitchenToGridLanguage.*
+#using AttrCondDefLibrary.*
+
+#rule create_a_fridge #extends CreateVerticalItem #with KitchenToGridLanguage
+
+#source {
+	firstBlock : Block {
+		 -n->noBlock
+	}
+	
+	!noBlock:Block
+}
+
+#target {	
+	++item:Fridge
+}
+
+#attributeConditions {	
+	eq(firstBlock.yIndex, 0)
+}
+

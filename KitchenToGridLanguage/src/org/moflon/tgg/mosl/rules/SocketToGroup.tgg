@@ -1,0 +1,39 @@
+#using KitchenToGridLanguage.*
+#using AttrCondDefLibrary.*
+
+#rule SocketToGroup #with KitchenToGridLanguage
+
+#source {
+	
+	grid: Grid{
+		++-groups->group
+	}
+	
+	++ group : Group
+}
+
+#target {	
+	
+	kitchen: Kitchen{
+		++ -itemSockets-> itemSocket
+	}
+	
+	++ itemSocket : ItemSocket
+}
+
+#correspondence {
+	kitchenToGrid: KitchenToGridCorr{
+		#src-> grid 
+		#trg-> kitchen
+	}
+	
+	++socketToGroup : SocketToGroupCorr{
+		#src-> group
+		#trg-> itemSocket
+	}
+	
+}
+
+#attributeConditions {	
+	setId(itemSocket.id)
+}

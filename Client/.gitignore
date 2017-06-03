@@ -1,0 +1,12 @@
+/build/
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+*.log
+local.properties
+.loadpath
+

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Adapter
+Bundle-SymbolicName: Adapter
+Bundle-Version: 1.0.0.qualifier
+Export-Package: bxtooldemo.adapter.core,
+ bxtooldemo.adapter.core.implementations.emoflon,
+ bxtooldemo.adapter.core.uiservice,
+ bxtooldemo.adapter.uimodels
+Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.12.0",
+ org.moflon.tgg.language;bundle-version="2.1.0",
+ org.moflon.tgg.runtime;bundle-version="2.0.0",
+ org.moflon.core.utilities
+Import-Package: org.apache.log4j

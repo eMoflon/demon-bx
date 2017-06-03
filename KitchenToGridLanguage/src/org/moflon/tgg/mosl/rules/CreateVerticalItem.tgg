@@ -1,0 +1,12 @@
+#using KitchenToGridLanguage.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule CreateVerticalItem  #extends CreateItemWithTwoBlocks #with KitchenToGridLanguage 
+
+#source {
+	firstBlock:Block {
+		-s-> secondBlock
+	}
+	
+	secondBlock:Block
+}

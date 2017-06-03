@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="GridLanguage" nsURI="platform:/plugin/GridLanguage/model/GridLanguage.ecore"
+    nsPrefix="GridLanguage">
+  <eClassifiers xsi:type="ecore:EClass" name="Grid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blockSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//Group" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="blocks" lowerBound="1"
+        upperBound="-1" eType="#//Block" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Group">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="occupies" lowerBound="1"
+        upperBound="-1" eType="#//Block" eOpposite="#//Block/isOccupiedBy"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Block">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="s" eType="#//Block" eOpposite="#//Block/n"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="n" eType="#//Block" eOpposite="#//Block/s"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="e" eType="#//Block" eOpposite="#//Block/w"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="w" eType="#//Block" eOpposite="#//Block/e"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ne" eType="#//Block" eOpposite="#//Block/sw"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sw" eType="#//Block" eOpposite="#//Block/ne"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nw" eType="#//Block" eOpposite="#//Block/se"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="se" eType="#//Block" eOpposite="#//Block/nw"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isOccupiedBy" eType="#//Group"
+        eOpposite="#//Group/occupies"/>
+  </eClassifiers>
+</ecore:EPackage>

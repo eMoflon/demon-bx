@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: KitchenToGridLanguage;singleton:=true
+Export-Package: KitchenToGridLanguage.Rules.impl,
+ KitchenToGridLanguage.impl,
+ KitchenToGridLanguage.Rules.util,
+ KitchenToGridLanguage.Rules,
+ KitchenToGridLanguage.util,
+ KitchenToGridLanguage
+Bundle-Name: KitchenToGridLanguage
+Bundle-Version: 1.0
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.moflon.core.utilities,
+ org.apache.log4j;bundle-version="1.2.15",
+ MocaTree,
+ org.eclipse.core.runtime,
+ SDMLanguage,
+ org.moflon.tgg.language,
+ org.moflon.tgg.runtime,
+ GridLanguage;bundle-version="1.0.0",
+ KitchenLanguage;bundle-version="1.0.0"
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: TU Darmstadt

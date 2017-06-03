@@ -1,0 +1,50 @@
+#using KitchenToGridLanguage.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule CreateItemWithTwoBlocks #with KitchenToGridLanguage
+
+#source {	
+	grid:Grid{
+		-groups->group
+		-blocks->firstBlock
+		-blocks->secondBlock
+	}
+	
+	group:Group {
+		++ -occupies->firstBlock
+		++ -occupies->secondBlock
+	}
+	
+	firstBlock:Block {
+		-isOccupiedBy->noGroup1
+	}
+	
+	!noGroup1:Group
+	!noGroup2:Group
+	
+	secondBlock:Block {
+		-isOccupiedBy->noGroup2
+	}
+}
+
+#target {	
+	
+	itemSocket : ItemSocket{
+		++ -item-> item
+	}
+	
+	++item : Item
+}
+
+#correspondence {
+	socketToGroup : SocketToGroupCorr{
+		#src-> group 
+		#trg-> itemSocket
+	}
+}
+
+#attributeConditions {	
+	posToIndex(grid.blockSize, item.yPos, firstBlock.yIndex)
+	posToIndex(grid.blockSize, item.xPos, firstBlock.xIndex)
+}	
+

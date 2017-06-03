@@ -1,0 +1,10 @@
+#using KitchenToGridLanguage.*
+#using AttrCondDefLibrary.*
+
+#rule create_a_horizontal_table #extends CreateHorizontalItem #with KitchenToGridLanguage
+
+#target {	
+	++item : Table
+}
+
+
