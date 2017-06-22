@@ -39,9 +39,7 @@ File -> Import -> Git -> Projects from Git > Clone URI
    
 5. For small code changes, Tomcat automatically build and push the changes while in running mode. Only you have to refresh the browser to see the effect of changes.
    For big changes, changes in javascript file(logic.js) or if the automatic build is not working(sometimes), stop the server, clean and then start once again.   
-
-
-Note: For changes/testing in Client or Adapter, make changes on branch: “Prof” and then push it to “master”.
+   
 
 Deploy project on Web-Server:
 1. First set-up a Web-Server with java 8 and Tomcat 7.0 installed in it. You will need a login id with admin rights. (Current ready Web-Server: bxtransform.cs.upb.de)
